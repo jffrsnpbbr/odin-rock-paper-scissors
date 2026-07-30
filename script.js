@@ -13,5 +13,20 @@ function  getComputerChoice() {
   }
 }
 
-const choice = getComputerChoice();
-console.log(choice);
+
+
+function getHumanChoice() {
+  const humanChoice = prompt("Please enter your choice: rock, paper, or scissors").toLowerCase();
+  if (humanChoice === "rock" || humanChoice === "paper" || humanChoice === "scissors") {
+    return humanChoice;
+  }
+  
+  alert("Invalid choice. Please enter rock, paper, or scissors.");
+  return;
+}
+
+// const computerChoice = getComputerChoice();
+const humanChoice = getHumanChoice();
+const computerChoice = getComputerChoice();
+console.log(`Human choice: ${humanChoice}`);
+console.log(`Computer choice: ${computerChoice}`);
