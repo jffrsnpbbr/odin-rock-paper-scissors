@@ -1,6 +1,3 @@
-let humanScore = 0;
-let computerScore = 0;
-
 function  getComputerChoice() {
   const randomIndex = Math.floor(Math.random() * 3); // returns random number betwee 0 and 2
 
@@ -37,7 +34,22 @@ function playRound(humanChoice, computerChoice) {
   }
 }
 
-const humanChoice = getHumanChoice();
-const computerChoice = getComputerChoice();
+let round = 0;
+let humanScore = 0;
+let computerScore = 0;
 
-playRound(humanChoice, computerChoice);
+do {
+  const humanChoice = getHumanChoice();
+  const computerChoice = getComputerChoice();
+  playRound(humanChoice, computerChoice);
+  console.log(`human: ${humanScore} -  computer: ${computerScore}`)
+  round++;
+} while (round < 5);
+
+if (humanScore > computerScore) {
+  console.log("You won!");
+} else if (humanScore < computerScore) {
+  console.log("You lost!");
+} else  {
+ console.log("It's a tie!" )
+}
