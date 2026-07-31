@@ -1,6 +1,3 @@
-// will write a function that randomly returns “rock”, “paper” or “scissors”. -- done
-// Write the code so that getComputerChoice will randomly return one of the following string values: “rock”, “paper” or “scissors”. -- done
-
 let humanScore = 0;
 let computerScore = 0;
 
@@ -26,9 +23,21 @@ function getHumanChoice() {
   return;
 }
 
+function playRound(humanChoice, computerChoice) {
+  if (humanChoice === computerChoice) {
+    console.log("It's a tie!");
+  } else if (humanChoice === "rock" && computerChoice === "scissors" ||
+             humanChoice === "paper" && computerChoice === "rock" ||
+             humanChoice === "scissors" && computerChoice === "paper") {
+    console.log("You win this round!");
+    humanScore++;
+  } else {
+    console.log("Computer wins this round!");
+    computerScore++;
+  }
+}
+
 const humanChoice = getHumanChoice();
 const computerChoice = getComputerChoice();
-console.log(`Human choice: ${humanChoice}`);
-console.log(`Computer choice: ${computerChoice}`);
 
-
+playRound(humanChoice, computerChoice);
